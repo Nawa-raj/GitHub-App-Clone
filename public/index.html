@@ -7,15 +7,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Web site created using create-react-app" />
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+
+  <!-- linking style sheet  -->
+  <!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css" /> -->
   <title>GitHub Clone</title>
 </head>
 
-<body>
+<style>
+  #error-message {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 45%;
+    z-index: 1200;
+    min-width: 100px;
+    max-width: 250px;
+    padding: 0.5rem 1rem;
+    background: red;
+    color: white;
+    text-transform: capitalize;
+    font-weight: 500;
+    border-radius: 2px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  }
+</style>
 
+<!-- body -->
+
+<body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <!-- customization start -->
+  <div id="error-message">Test Error Message...</div>
   <div id="root"></div>
 
 </body>

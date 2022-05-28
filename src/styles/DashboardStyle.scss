@@ -1,0 +1,49 @@
+.box_container {
+  background: linear-gradient(to left, rgb(1, 1, 22) 13%, rgb(6, 3, 61) 93%);
+}
+
+.logo_circle {
+  background     : radial-gradient(circle, rgba(6, 4, 65, 0.712) 30%, rgb(6, 6, 70) 50%, rgb(39, 36, 99) 80%, rgb(8, 4, 85) 90%);
+  min-width      : 300px;
+  min-height     : 300px;
+  border-radius  : 50%;
+  padding        : 1rem;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  margin         : 2rem 1rem;
+  box-shadow     : 0px 0px 10px 10px rgba(20, 20, 112, 0.384);
+
+
+  .img_wrapper {
+    width           : fit-content;
+    height          : fit-content;
+    border-radius   : 50%;
+    padding         : 0.5rem;
+    background-color: var(--bs-gray-100);
+  }
+
+}
+
+.git_info {
+
+  h1,
+  p {
+    font-weight: bolder;
+    font-size  : 3rem;
+    color      : var(--bs-gray-600);
+  }
+
+  p {
+    font-size  : 18px;
+    color      : var(--bs-gray-500);
+    font-weight: normal;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .flex-md-equal>* {
+    flex: 1;
+  }
+}

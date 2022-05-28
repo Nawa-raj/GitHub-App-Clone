@@ -1,6 +1,12 @@
+
+/* <!-- Including one css file into other --> */
+@import "bootstrap.min.css";
+
 :root{
---bg-color: rgb(2,0,36);
+--bg-color: rgb(6, 3, 61);
+--border-color: rgb(6, 3, 63);
 --bg-gradient: linear-gradient(160deg, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 76%, rgba(20,38,199,0.9472163865546218) 100%);
+--input-bg: rgba(70, 70, 70, 0.164);
 }
 
 
@@ -16,4 +22,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.body_wrapper{
+  min-height: 75vh;
 }

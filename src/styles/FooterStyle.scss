@@ -1,0 +1,28 @@
+.footer_root {
+    display        : flex;
+    justify-content: center;
+    align-items    : flex-start;
+    margin-top     : 2rem;
+    background     : var(--bg-color);
+    color          : var(--bs-gray-400);
+    padding        : 2rem 2rem 1rem;
+
+    .footer_text {
+        p {
+            margin: 0;
+        }
+
+        .heading {
+            text-transform: capitalize;
+            font-size     : 16px;
+            color         : var(--bs-gray-600);
+            font-weight   : 700;
+            margin-bottom : 0.4rem;
+        }
+
+        .default_border {
+            border-bottom: 5px solid rgba(255, 255, 255, 0.781);
+            border-radius: 1px;
+        }
+    }
+}

@@ -1,0 +1,131 @@
+.filter_row {
+    background   : var(--bs-gray-200);
+    padding      : 1.5rem;
+    border-radius: 5px;
+
+    label {
+        font-size     : small;
+        font-weight   : bold;
+        text-transform: capitalize;
+        font-size     : 13px;
+        color         : var(--bs-gray-800);
+        margin-left   : 0.3rem;
+
+        &::after {
+            content: ":";
+            padding: 0 0.3rem;
+        }
+    }
+
+    input::placeholder {
+        text-transform: capitalize;
+        font-size     : 13px;
+        color         : var(--bs-gray-600);
+        font-weight   : 500;
+
+    }
+
+    select {
+        text-transform: capitalize;
+    }
+
+    .rearch_result_info {
+        padding      : 1rem 2rem;
+        background   : rgb(255, 255, 255);
+        border-radius: 0.3rem;
+
+        // background: var(--bg-gradient);
+        .heading {
+
+            h2 {
+                font-size    : 26px;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                width           : 20%;
+                border-bottom   : 4px solid #00076d;
+                border-radius   : 2px;
+                // box-shadow   : 0px 0px 1px 1px rgba($color: #000000, $alpha: 1.0);
+            }
+        }
+    }
+
+    .info_wrapper {
+        padding      : 1rem 2rem;
+        background   : rgb(255, 255, 255);
+        border-radius: 0.3rem;
+
+        p {
+            margin-bottom: 0.3rem;
+
+            span {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+.reasult_card {
+    .card {
+        border: none;
+    }
+
+    .card-header {
+        border-bottom  : 1px solid var(--bs-primary);
+        background     : #ebebeb;
+        display        : flex;
+        justify-content: flex-start;
+        align-items    : center;
+
+        img {
+            border-radius: 50%;
+            width        : 50px;
+            height       : 50px;
+
+        }
+
+        .info {
+            padding: 0.5rem 1rem 0.2rem;
+            width  : 100%;
+
+            .name {
+                font-size     : 16px;
+                font-weight   : bold;
+                color         : var(--bg-color);
+                text-transform: capitalize;
+            }
+
+            .other_info {
+                display        : flex;
+                justify-content: space-between;
+                align-items    : flex-start;
+
+                .my_text {
+                    font-size  : 12px;
+                    font-weight: bold;
+                    color      : var(--bs-gray-600);
+                }
+            }
+        }
+    }
+
+    .card-footer {
+        background     : white;
+        border         : none;
+        display        : flex;
+        justify-content: flex-end;
+        align-items    : flex-end;
+    }
+
+}
+
+.pagination_row {
+    .pagination {
+        li {
+            span {
+                cursor: pointer;
+            }
+        }
+    }
+}
