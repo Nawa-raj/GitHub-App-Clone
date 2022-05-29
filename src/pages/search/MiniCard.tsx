@@ -1,19 +1,25 @@
-import { Link } from 'react-router-dom'
+import { colorTheme } from "constant/colorTheme"
+import { truncate } from 'functions/StringManupulation'
+import { responseItemType } from 'models/reposModels'
+import { AiOutlineEye } from "react-icons/ai"
 import { BiGitRepoForked } from "react-icons/bi"
 import { GoIssueReopened } from "react-icons/go"
-import { AiOutlineEye } from "react-icons/ai"
-import { colorTheme } from "constant/colorTheme"
-import { responseItemType } from 'models/reposType'
-import { truncate } from 'functions/StringManupulation'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const MiniCard = (props: responseItemType) => {
+    const navigator = useNavigate();
+
+    // handle view details...
+    const handleViewDetails = () => {
+        navigator(`/repositories-details/${props.name}`, { state: props })
+    }
 
     return (
         <div className="card">
             <div className="card-header">
-                <img src='https://avatars.githubusercontent.com/u/26464369?v=4' alt='logo' />
+                <img src={props.owner.avatar_url} alt={props.full_name} />
                 <div className='info'>
                     <div className="name">{truncate(props.full_name ? props.full_name : "", 30, "...")}</div>
                     <div className='other_info mt-1'>
@@ -40,7 +46,7 @@ const MiniCard = (props: responseItemType) => {
             </div>
 
             <div className="card-footer">
-                <Link to={`/repositories-details/${props.name}`} className="btn btn-outline-primary">View Details</Link>
+                <button className="btn btn-outline-primary" onClick={handleViewDetails}>View Details</button>
             </div>
         </div>
     )

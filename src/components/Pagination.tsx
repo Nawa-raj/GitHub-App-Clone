@@ -40,7 +40,7 @@ const Pagination = ({ currentPageNo, itemPerPage, totalItems, onPageNumberChange
             const newList = showPageList.map((val) => val - 1);
             onPageNumberChange(currentPageNo - 1)
             setShowPageList(newList)
-        } else if (currentPageNo == 2) {
+        } else if (currentPageNo === 2) {
             onPageNumberChange(1)
         }
     }

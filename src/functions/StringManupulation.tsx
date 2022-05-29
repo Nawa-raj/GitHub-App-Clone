@@ -1,11 +1,11 @@
 
 export const isEmpty = (value: any) => {
     if (
-        value == null ||
-        value == undefined ||
-        value == "undefined" ||
-        value == "" ||
-        value == "null"
+        value === null ||
+        value === undefined ||
+        value === "undefined" ||
+        value === "" ||
+        value === "null"
     ) {
         return true;
     }
@@ -17,3 +17,12 @@ export const truncate = (str: string, max: number, suffix: string) => {
     else if (str.length < max && str.length > 0) return str;
     else return `${str.substring(0, max)}${suffix}`;
 };
+
+
+export const replaceEmpty = (testValue: any, replaceValue?: string) => {
+    if (!isEmpty(testValue)) return testValue;
+    else {
+        if (replaceValue) return replaceValue;
+        return "Not Provided"
+    }
+}

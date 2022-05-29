@@ -1,10 +1,10 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import RepoDetails from 'pages/search/RepoDetails';
-import SearchResult from 'pages/SearchResult';
+import SearchResult from 'pages/search';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Dashboard from './pages/Dashboard';
+import PageIndex from './pages';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       {/* body part */}
       <div className='body_wrapper'>
         <Routes>
-          <Route index element={<Dashboard />} />
+          <Route index element={<PageIndex />} />
           <Route path="/search/:slug" element={<SearchResult />} />
           <Route path="/repositories-details/:slug" element={<RepoDetails />} />
         </Routes>

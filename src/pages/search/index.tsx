@@ -1,13 +1,13 @@
-import FallBackLoading from 'components/Loader';
-import React, { useEffect, useState } from 'react'
+import { Loader } from 'components/Loader';
+import Pagination from 'components/Pagination';
+import { isEmpty } from 'functions/StringManupulation';
+import { searchReposType } from "models/reposModels";
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { axiosGet } from 'services/api/requestMethods';
 import { showMessage } from 'services/messageService';
 import "styles/SearchResultStyle.scss";
-import { searchReposType } from "models/reposType"
-import MiniCard from './search/MiniCard';
-import Pagination from 'components/Pagination';
-import { isEmpty } from 'functions/StringManupulation';
+import MiniCard from './MiniCard';
 
 
 interface datatype {
@@ -94,8 +94,17 @@ const SearchResult = () => {
         init(encodeURIComponent(`&page=${currentPageNo}`));
     }
 
+
+    if (loading) return (
+        <div
+            className="d-flex align-items-center justify-content-center m-auto"
+            style={{ minHeight: "90vh" }}>
+            <Loader />
+        </div>
+    )
+
     return (
-        <FallBackLoading isLoading={loading} loadingTime={4}>
+        <React.Fragment>
             <div className='container-fluid'>
                 <div className='row filter_row'>
                     <div className="col-xs-12 col-sm-6 d-flex align-items-center">
@@ -203,7 +212,7 @@ const SearchResult = () => {
                     </div>
                 </div>
             </div>
-        </FallBackLoading >
+        </React.Fragment>
     )
 }
 

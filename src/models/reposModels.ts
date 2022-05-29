@@ -73,7 +73,7 @@ export interface responseItemType {
     archived: boolean
     disabled: boolean
     open_issues_count: number
-    license: any
+    license?: License
     allow_forking: boolean
     is_template: boolean
     topics: any[]
@@ -104,4 +104,37 @@ export interface Owner {
     received_events_url: string
     type: string
     site_admin: boolean
+}
+
+
+export interface repoDetailType {
+    name: string
+    path: string
+    sha: string
+    size: number
+    url: string
+    html_url: string
+    git_url: string
+    download_url: string
+    type: string
+    content: string
+    encoding: string
+    _links: repoDetailLinksType
+
+}
+
+
+export interface repoDetailLinksType {
+    self: string
+    git: string
+    html: string
+}
+
+
+export interface License {
+    key: string;
+    name: string;
+    spdx_id: string;
+    url: string;
+    node_id: string;
 }

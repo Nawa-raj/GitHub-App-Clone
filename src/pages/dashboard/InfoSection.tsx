@@ -1,5 +1,5 @@
 
-export const InfoSection = () => {
+const InfoSection = () => {
     return (
         <div className="container-fluid box_container w-100">
             <div className="row">
@@ -26,4 +26,6 @@ export const InfoSection = () => {
             </div>
         </div>
     )
-}
+};
+
+export default InfoSection;
