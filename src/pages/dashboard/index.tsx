@@ -1,53 +1,60 @@
-import React, { useEffect } from 'react'
+import FallBackLoading, { Loader } from 'components/Loader';
+import { userListModel } from 'models/userModels';
+import React, { useEffect, useState } from 'react';
 import { axiosGet } from 'services/api/requestMethods';
 import { showMessage } from 'services/messageService';
 import "styles/DashboardStyle.scss";
-import InfoSection from './InfoSection';
+import InfoSection from './GitInfoSection';
+import UserDetailCard from './UserDetailCard';
+import UserCard from './UserCard';
+
+
 
 const Dashboard = () => {
+    const [state, setState] = useState<userListModel[]>([]);
+    const [selectedUser, setSelectedUser] = useState("");
+    const [loading, setLoading] = useState(false);
+
 
     // init data...
     const init = async () => {
-        const res = await axiosGet({ url: "/search/repositories?q=hello&sort=forks&order=asc&page=12" });
+        setLoading(true)
+
+        const res = await axiosGet<userListModel[]>({ url: "/users?per_page=15" });
         if (res.status === 200) {
-            console.log("success response: ", res.successRes);
-            showMessage({ autoHideTime: 4, messageType: "success" })
-        } else { console.log("error response: ", res.errorRes) }
+            setState(res.successRes.data)
+            setSelectedUser(res.successRes.data[0].login);
+        } else { showMessage({ messageType: "error", autoHideTime: 3, message: String(res.errorRes.statusText) }) }
+
+        setLoading(false)
     }
 
-    useEffect(() => {
-        let isSuscribe = true;
-        if (isSuscribe) {
-            init()
-        }
+    useEffect(() => { init() }, []);
 
-        return () => { isSuscribe = false }
-    }, []);
 
+
+    // if (loading) return (
+    //     <div
+    //         className="d-flex align-items-center justify-content-center m-auto"
+    //         style={{ minHeight: "90vh" }}>
+    //         <Loader />
+    //     </div>
+    // )
 
     return (
-        <React.Fragment >
-
+        <FallBackLoading isLoading={loading}>
             <InfoSection />
 
-            <div className="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-                <div className="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-                    <div className="my-3 py-3">
-                        <h2 className="display-5">Another headline</h2>
-                        <p className="lead">And an even wittier subheading.</p>
-                    </div>
-                    <div className="bg-light shadow-sm mx-auto" style={{ width: "80%", height: "300px", borderRadius: "21px 21px 0 0" }}></div>
+            <div className='row gy-3 m-md-3 m-2 p-2'>
+                <div className="col col-sm-12 col-lg-6">
+                    <UserCard userList={state} handleUserClick={(val) => setSelectedUser(val)} />
                 </div>
 
-                <div className="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                    <div className="my-3 p-3">
-                        <h2 className="display-5">Another headline</h2>
-                        <p className="lead">And an even wittier subheading.</p>
-                    </div>
-                    <div className="bg-dark shadow-sm mx-auto" style={{ width: "80%", height: "300px", borderRadius: "21px 21px 0 0" }}></div>
+                <div className="col col-sm-12 col-lg-6 mt-5 mt-lg-0">
+                    <UserDetailCard userName={selectedUser} />
                 </div>
             </div>
-        </React.Fragment>
+        </FallBackLoading>
     )
 }
 

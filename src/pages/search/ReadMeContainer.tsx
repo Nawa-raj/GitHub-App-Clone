@@ -25,7 +25,7 @@ const ReadMeContainer = (props: responseItemType) => {
 
 
     return (
-        <div className="col col-sm-12 col-md-8 ">
+        <div className="col col-sm-12 col-md-8" style={{ overflow: "hidden" }}>
             <div className='me-lg-4'>
                 <h5 className="card-title my-3 fs-4 ps-2">{state?.name}</h5>
                 <div className='bg-light p-4'>

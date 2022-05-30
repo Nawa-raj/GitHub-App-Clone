@@ -1,19 +1,18 @@
-import { replaceEmpty } from 'functions/StringManupulation'
-import { responseItemType } from 'models/reposModels'
-import { userModels } from 'models/userModels';
-import { useEffect, useState } from 'react'
-import { GoGistSecret, GoRepoClone } from 'react-icons/go';
+import { getDate } from 'functions/common';
+import { replaceEmpty } from 'functions/StringManupulation';
+import { responseItemType } from 'models/reposModels';
+import { userDetailModel } from 'models/userModels';
+import { useEffect, useState } from 'react';
 import { axiosGet } from 'services/api/requestMethods';
 import { showMessage } from 'services/messageService';
-import { colorTheme } from 'constant/colorTheme';
 
 const DetailExtra = (props: responseItemType) => {
 
     // local states...
-    const [state, setState] = useState<userModels>();
+    const [state, setState] = useState<userDetailModel>();
 
     const init = async () => {
-        const res = await axiosGet<userModels>({ url: `/users/${props.owner.login}` });
+        const res = await axiosGet<userDetailModel>({ url: `/users/${props.owner.login}` });
         if (res.successRes.status === 200) {
             setState(res.successRes.data);
         } else {
@@ -22,11 +21,6 @@ const DetailExtra = (props: responseItemType) => {
     };
 
     useEffect(() => { init() }, [props]);
-
-
-    const getDate = (str: string) => {
-        return new Date(str).toDateString()
-    }
 
     return (
         <div className="col col-sm-12 col-md-4">

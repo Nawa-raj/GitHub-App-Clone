@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export const Loader = () => {
     return (
@@ -17,6 +17,7 @@ interface fallbackLoaderProps {
     isLoading: boolean;
     children: React.ReactNode;
     loadingTime?: number;
+    style?: React.CSSProperties;
 }
 
 const FallBackLoading = (props: fallbackLoaderProps) => {
@@ -28,24 +29,27 @@ const FallBackLoading = (props: fallbackLoaderProps) => {
         return time;
     };
 
-    React.useEffect(() => {
-        let isSuscribe = true;
-        setLoading(props.isLoading);
+    // useEffect(() => { setLoading(props.isLoading); }, [props.isLoading]);
 
-        if (isSuscribe && props.isLoading) {
-            setTimeout(() => {
-                setLoading(false);
-            }, getLoadingTime());
+    const settimer = () => {
+        setTimeout(() => {
+            setLoading(false);
+        }, getLoadingTime());
+    }
+
+    useEffect(() => {
+        if (props.isLoading) {
+            settimer();
         }
 
-        return () => { isSuscribe = false; };
-    }, [props.isLoading]);
+    }, [props.isLoading])
+
 
     if (loading) {
         return (
             <div
                 className="d-flex align-items-center justify-content-center m-auto"
-                style={{ minHeight: "90vh" }}
+                style={{ minHeight: "90vh", ...props.style }}
             >
                 {props.loader ? props.loader : (<Loader />)}
             </div>
