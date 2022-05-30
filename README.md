@@ -5,7 +5,9 @@ landing page screenshot
 <p align="center">
   <img 
   src="https://github.com/Nawa-raj/GitHub-App-Clone/blob/gh-pages/landingpage.png?raw=true" 
-  width="350" 
+  width="100%"
+  height ="100%"
+  style ="object-fit:contain;" 
   title="hover text">
 </p>
 
