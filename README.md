@@ -1,7 +1,7 @@
 
 
-# Getting Started with Create React App
-landing page screenshot
+# This Project is created with Create React App 
+<h2>Final Landing Page Screenshot</h2>
 <p align="center">
   <img 
   src="https://github.com/Nawa-raj/GitHub-App-Clone/blob/gh-pages/landingpage.png?raw=true" 
@@ -11,7 +11,11 @@ landing page screenshot
   title="hover text">
 </p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## To View Live Demo You Can Visit: 
+<div style="display:flex; justify-content:space-between; align-items: center;">
+<p>To View Live Demo Click On View Button</p>
+<a href="https://nawa-raj.github.io/GitHub-App-Clone" style="padding:0.5rem; background: ##0d6efd; color: white">View</a>
+</div>
 
 ## Available Scripts
 
