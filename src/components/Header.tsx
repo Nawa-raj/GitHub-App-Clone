@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "styles/HeaderStyle.scss";
 
 const Header = () => {
@@ -14,9 +14,9 @@ const Header = () => {
     return (
         <nav className="navbar header_bg_dark">
             <div className='container-fluid mx-4 py-2'>
-                <a className="navbar-brand" href="/">
-                    <img src="/github.png" alt="github icon" width="30" height="30" />
-                </a>
+                <Link className="navbar-brand" to={"/"}>
+                    <img src="github.png" alt="github icon" width="30" height="30" />
+                </Link>
 
                 <div className="d-flex input_container">
                     <div className="input-group justify-content-start align-items-end">
