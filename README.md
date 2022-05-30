@@ -1,7 +1,13 @@
 
 
 # Getting Started with Create React App
-landing page screenshot [langing page screenshot](https://github.com/Nawa-raj/GitHub-App-Clone/blob/gh-pages/landingpage.png?raw=true).
+landing page screenshot
+<p align="center">
+  <img 
+  src="https://github.com/Nawa-raj/GitHub-App-Clone/blob/gh-pages/landingpage.png?raw=true" 
+  width="350" 
+  title="hover text">
+</p>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
