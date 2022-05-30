@@ -12,10 +12,10 @@
 </p>
 
 ## To View Live Demo You Can Visit: 
-<div style="display:flex; justify-content:space-between; align-items: center;">
-<p>To View Live Demo Click On View Button</p>
-<a href="https://nawa-raj.github.io/GitHub-App-Clone" style="padding:0.5rem; background: ##0d6efd; color: white">View</a>
-</div>
+
+To View Live Demo Click On View Button: 
+<a href="https://nawa-raj.github.io/GitHub-App-Clone" style="padding:0.5rem; background: #0d6efd; color: white">View</a>
+
 
 ## Available Scripts
 
