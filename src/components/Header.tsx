@@ -11,6 +11,11 @@ const Header = () => {
         navigate(`/search/repositories?q=${searchQuery}`, { state: { searchQuery: searchQuery } });
     }
 
+    var imageSrc = "/github.png";
+    if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
+        imageSrc = "github.png";
+    }
+
     return (
         <nav className="navbar header_bg_dark">
             <div className='container-fluid mx-4 py-2'>
@@ -20,26 +25,7 @@ const Header = () => {
 
                 <div className="d-flex input_container">
                     <div className="input-group justify-content-start align-items-end">
-                        {/* <div className="d-block">
-                            <label className="fw-bold" htmlFor="search_by"><small>Search By</small></label>
-                            <select
-                                className="form-select"
-                                aria-label="Search By"
-                                id="search_by"
-                                style={{ height: "2.4rem" }}
-                                onChange={(e) => {
-                                    console.log(e.target.value)
-                                    setSearchOption(e.target.value);
-                                }}
-                            >
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div> */}
-
                         <div className="ms-2">
-                            {/* <label className="fw-bold" htmlFor="search_by"><small>Search Query</small></label> */}
                             <input
                                 className="form-control"
                                 type="text"
