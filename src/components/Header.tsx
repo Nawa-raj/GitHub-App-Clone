@@ -20,7 +20,7 @@ const Header = () => {
         <nav className="navbar header_bg_dark">
             <div className='container-fluid mx-4 py-2'>
                 <Link className="navbar-brand" to={"/"}>
-                    <img src={imageSrc} alt="github icon" width="30" height="30" />
+                    <img src={process.env.PUBLIC_URL + imageSrc} alt="github icon" width="30" height="30" />
                 </Link>
 
                 <div className="d-flex input_container">

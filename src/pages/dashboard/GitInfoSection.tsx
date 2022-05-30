@@ -1,5 +1,11 @@
 
 const InfoSection = () => {
+
+    var imageSrc = "/github_logo_big.png";
+    if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
+        imageSrc = "github_logo_big.png";
+    }
+
     return (
         <div className="container-fluid box_container w-100">
             <div className="row">
@@ -18,7 +24,7 @@ const InfoSection = () => {
                     <div className='d-flex justify-content-center align-item-center md-me-2'>
                         <div className='logo_circle'>
                             <div className="img_wrapper">
-                                <img src="github_logo_big.png" alt="git logo" />
+                                <img src={process.env.PUBLIC_URL + `${imageSrc}`} alt="git logo" />
                             </div>
                         </div>
                     </div>

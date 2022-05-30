@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, memo } from 'react'
 
 export const Loader = () => {
     return (
@@ -59,4 +59,4 @@ const FallBackLoading = (props: fallbackLoaderProps) => {
     return <div>{props.children}</div>;
 };
 
-export default FallBackLoading;
+export default memo(FallBackLoading);
